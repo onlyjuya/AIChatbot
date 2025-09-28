@@ -1,0 +1,33 @@
+{
+  "name": "AI 챗봇 아미",
+  "short_name": "AI 챗봇 아미",
+  "description": "친구 같은 AI와 채팅하는 앱",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5345ec",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["social", "productivity", "utilities"],
+  "lang": "ko",
+  "dir": "ltr"
+}
