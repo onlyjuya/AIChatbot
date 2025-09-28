@@ -81,23 +81,23 @@ export default function Page() {
   return (
     <main className="mx-auto flex min-h-svh w-[760px] max-w-full flex-col bg-background h-svh overflow-hidden">
       <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur">
-        <div className="flex items-center justify-between px-3 py-2">
-          <div className="flex items-center gap-2 text-sm text-primary font-medium">
+        <div className="flex items-center justify-between px-3 py-2 min-h-[48px]">
+          <div className="flex items-center gap-2 text-sm font-medium">
             <Sparkles className="h-4 w-4 text-primary" />
-            AI 챗봇
+            <span className="text-primary">AI 챗봇</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <PersonalitySelect
               value={personalityId}
               onChange={setPersonalityId}
               personalities={availablePersonalities}
               disabled={isStreaming}
             />
-            <Button variant="secondary" size="sm" onClick={() => setOpenSheet(true)}>
-              <KeyRound className="mr-1 h-3.5 w-3.5" /> API 키
+            <Button variant="ghost" size="icon" onClick={() => setOpenSheet(true)} className="h-8 w-8">
+              <KeyRound className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="sm" onClick={reset} disabled={isStreaming}>
-              <RotateCcw className="mr-1 h-3.5 w-3.5" /> 초기화
+            <Button variant="ghost" size="icon" onClick={reset} disabled={isStreaming} className="h-8 w-8">
+              <RotateCcw className="h-4 w-4" />
             </Button>
           </div>
         </div>
