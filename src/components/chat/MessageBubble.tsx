@@ -37,12 +37,12 @@ export function MessageBubble({ message }: Props) {
     >
       {!isUser && (
         <div className="mt-1 text-muted-foreground">
-          <Bot size={18} />
+          <Bot size={20} />
         </div>
       )}
       <div
         className={cn(
-          "max-w-[80%] rounded-2xl px-3 py-2 text-sm leading-relaxed relative group",
+          "max-w-[80%] rounded-2xl px-4 py-3 text-base leading-relaxed relative group",
           isUser ? "bg-primary text-primary-foreground" : "bg-muted"
         )}
       >
@@ -83,7 +83,7 @@ export function MessageBubble({ message }: Props) {
       </div>
       {isUser && (
         <div className="mt-1 text-muted-foreground">
-          <User size={18} />
+          <User size={20} />
         </div>
       )}
     </motion.div>

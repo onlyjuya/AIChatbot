@@ -26,23 +26,25 @@ export function ChatInput({ value, onChange, onSubmit, onStop, disabled, isStrea
   );
 
   return (
-    <div className="sticky bottom-0 z-20 flex items-end gap-2 border-t bg-background/95 backdrop-blur shadow-lg p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))]">
-      <Input
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder="메세지입력"
-        className="flex-1"
-      />
-      {isStreaming ? (
-        <Button variant="secondary" size="icon" onClick={onStop} className="shrink-0 h-10 w-10">
-          <Square className="h-4 w-4" />
-        </Button>
-      ) : (
-        <Button size="icon" onClick={onSubmit} disabled={disabled} className="shrink-0 h-10 w-10">
-          <Send className="h-4 w-4" />
-        </Button>
-      )}
+    <div className="fixed bottom-0 left-0 right-0 z-40 flex items-end gap-3 border-t bg-background/95 backdrop-blur shadow-lg p-3 pb-[max(1rem,env(safe-area-inset-bottom))]">
+      <div className="mx-auto flex w-full max-w-[760px] items-center gap-3">
+        <Input
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="메세지입력"
+          className="flex-1 h-12 text-base"
+        />
+        {isStreaming ? (
+          <Button variant="secondary" size="icon" onClick={onStop} className="shrink-0 h-12 w-12">
+            <Square className="h-5 w-5" />
+          </Button>
+        ) : (
+          <Button size="icon" onClick={onSubmit} disabled={disabled} className="shrink-0 h-12 w-12">
+            <Send className="h-5 w-5" />
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

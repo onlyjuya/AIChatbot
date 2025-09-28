@@ -80,29 +80,29 @@ export default function Page() {
 
   return (
     <main className="mx-auto flex min-h-svh w-[760px] max-w-full flex-col bg-background h-svh overflow-hidden">
-      <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur">
-        <div className="flex items-center justify-between px-3 py-2 min-h-[48px]">
-          <div className="flex items-center gap-2 text-sm font-medium">
-            <Sparkles className="h-4 w-4 text-primary" />
+      <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur">
+        <div className="mx-auto flex items-center justify-between px-4 py-3 min-h-[56px] w-[760px] max-w-full">
+          <div className="flex items-center gap-2 text-base font-medium">
+            <Sparkles className="h-5 w-5 text-primary" />
             <span className="text-primary">AI 챗봇</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <PersonalitySelect
               value={personalityId}
               onChange={setPersonalityId}
               personalities={availablePersonalities}
               disabled={isStreaming}
             />
-            <Button variant="ghost" size="icon" onClick={() => setOpenSheet(true)} className="h-8 w-8">
-              <KeyRound className="h-4 w-4" />
+            <Button variant="ghost" size="icon" onClick={() => setOpenSheet(true)} className="h-10 w-10">
+              <KeyRound className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" onClick={reset} disabled={isStreaming} className="h-8 w-8">
-              <RotateCcw className="h-4 w-4" />
+            <Button variant="ghost" size="icon" onClick={reset} disabled={isStreaming} className="h-10 w-10">
+              <RotateCcw className="h-5 w-5" />
             </Button>
           </div>
         </div>
       </header>
-      <div ref={scrollAreaRef} className="flex-1 overflow-auto px-3 py-3 pb-24">
+      <div ref={scrollAreaRef} className="flex-1 overflow-auto px-3 pt-[72px] pb-20">
         <div className="mx-auto flex w-full flex-col gap-2">
           {messages.length === 0 && (
             <div className="mt-10 rounded-xl border p-4 text-center text-sm text-muted-foreground">

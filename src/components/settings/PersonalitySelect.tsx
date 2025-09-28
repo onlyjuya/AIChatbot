@@ -20,7 +20,7 @@ export function PersonalitySelect({ value, onChange, personalities, disabled }: 
 
   return (
     <Select value={value} onValueChange={handleValueChange} disabled={disabled}>
-      <SelectTrigger className="w-[140px] h-8 text-xs">
+      <SelectTrigger className="w-[120px] h-10 text-sm">
         <SelectValue placeholder="성격 선택" />
       </SelectTrigger>
       <SelectContent>
@@ -28,7 +28,7 @@ export function PersonalitySelect({ value, onChange, personalities, disabled }: 
           <SelectItem key={personality.id} value={personality.id}>
             <div className="flex items-center gap-2">
               <span>{personality.icon}</span>
-              <span className="text-xs">{personality.name}</span>
+              <span className="text-sm">{personality.name}</span>
             </div>
           </SelectItem>
         ))}
