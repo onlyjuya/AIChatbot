@@ -35,13 +35,12 @@ export function ChatInput({ value, onChange, onSubmit, onStop, disabled, isStrea
         className="min-h-10 max-h-40 flex-1 resize-y"
       />
       {isStreaming ? (
-        <Button variant="secondary" onClick={onStop} className="shrink-0">
-          <Square className="mr-1 h-4 w-4" /> 중지
+        <Button variant="secondary" size="icon" onClick={onStop} className="shrink-0 h-10 w-10">
+          <Square className="h-4 w-4" />
         </Button>
       ) : (
-        <Button onClick={onSubmit} disabled={disabled} className="shrink-0">
-          <Send className="mr-1 h-4 w-4" />
-          전송
+        <Button size="icon" onClick={onSubmit} disabled={disabled} className="shrink-0 h-10 w-10">
+          <Send className="h-4 w-4" />
         </Button>
       )}
     </div>
