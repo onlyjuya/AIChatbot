@@ -11,7 +11,12 @@ export function useChat() {
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [modelName, setModelName] = useState("gemini-2.5-flash");
-  const [apiKey, setApiKeyState] = useState<string | null>(null);
+  const [apiKey, setApiKeyState] = useState<string | null>(() => {
+    if (typeof window !== "undefined") {
+      return getApiKey();
+    }
+    return null;
+  });
   const [personalityId, setPersonalityId] = useState<string>("friendly");
   const [shouldScrollToBottom, setShouldScrollToBottom] = useState(false);
   const scrollThrottleRef = useRef<NodeJS.Timeout | null>(null);

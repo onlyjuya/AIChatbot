@@ -33,15 +33,21 @@ export default function Page() {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const [hasCheckedApiKey, setHasCheckedApiKey] = useState(false);
+
   useEffect(() => {
-    if (!apiKey) {
-      setOpenSheet(true);
-      toast("API 키를 설정해주세요", {
-        icon: "🔑",
-        duration: 4000,
-      });
+    // API 키가 로드된 후에만 체크
+    if (!hasCheckedApiKey && apiKey !== null) {
+      setHasCheckedApiKey(true);
+      if (!apiKey) {
+        setOpenSheet(true);
+        toast("API 키를 설정해주세요", {
+          icon: "🔑",
+          duration: 4000,
+        });
+      }
     }
-  }, [apiKey]);
+  }, [apiKey, hasCheckedApiKey]);
 
   // 메시지가 변경되거나 스크롤 신호가 올 때마다 스크롤을 맨 아래로 이동
   useEffect(() => {
