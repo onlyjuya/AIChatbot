@@ -34,6 +34,11 @@ export default function Page() {
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const [hasCheckedApiKey, setHasCheckedApiKey] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     // API 키가 로드된 후에만 체크
@@ -112,7 +117,7 @@ export default function Page() {
         <div className="mx-auto flex w-full flex-col gap-2">
           {messages.length === 0 && (
             <div className="mt-10 rounded-xl border p-4 text-center text-sm text-muted-foreground">
-              {apiKey ? "메시지를 입력해 대화를 시작하세요." : "API 키를 설정하고 메시지를 입력해 대화를 시작하세요."}
+              {isClient ? (apiKey ? "메시지를 입력해 대화를 시작하세요." : "API 키를 설정하고 메시지를 입력해 대화를 시작하세요.") : "메시지를 입력해 대화를 시작하세요."}
             </div>
           )}
           {messages.map((m) => (
